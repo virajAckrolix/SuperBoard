@@ -1,0 +1,11 @@
+{
+  "name": "superboard",
+  "version": "1.0.0",
+  "description": "Superboard Project as an introduction to how SAAS products are built.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
