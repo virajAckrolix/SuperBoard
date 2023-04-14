@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const upload = require('express-fileupload')
 const cors = require('cors')
+const cookieParser = require('cookie-parser')
 
 const routes = require("./routes/index")
 
@@ -38,7 +39,18 @@ app.use(bodyParser.json());
 app.use(upload())
 
 //cors
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Methods', 'DELETE, PUT, GET, POST , OPTIONS');
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use(cors())
+
+app.use(cookieParser())
 
 // Set Public Folder
 //not needed for the project but is nice to have incase we wish to serve static files from our public folder.
